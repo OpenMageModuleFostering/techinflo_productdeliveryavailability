@@ -1,13 +1,13 @@
 {
     "name": "OpenMageModuleFostering/Techinflo_ProductDeliveryAvailability",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "GNU-General-Public-License-(GPL)",
     "homepage": "",
     "description": "Allows Customer to check product availability in its location by entering zip code of the location",
     "authors": [
     {
-        "name": "Techinflo",
-        "email": "anil.gupta@techinflo.com"
+        "name": "Anil Gupta",
+        "email": "contact@techinflo.com"
     }
 ],
     "suggest": {
