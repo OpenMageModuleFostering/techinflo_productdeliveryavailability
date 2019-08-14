@@ -24,39 +24,36 @@ class Techinflo_Checkavailability_Model_Availability extends Mage_Core_Model_Abs
         $this->_init('checkavailability/availability');
     }
 
-    public function detailpage($pid, $pincode) {
+   public function detailpage($pid, $pincode) {
 
         $product_id = $pid;
         $product = Mage::getModel('catalog/product')->load($product_id);
         $pin_code = $pincode;
 
-        $avilble_vendors = explode("||", $product->getVendorAvailability());
-        //print_r($avilble_vendors);
+        $avilble_vendors = explode("||", $product->getVendorAvailability());        
         foreach ($avilble_vendors as $vendarr) {
             $vand_ar1 = explode(":", $vendarr);
-            $zips = explode(",", $vand_ar1[1]);
+            $zips = explode(",", $vendarr);
             foreach ($zips as $ziprange) {
-
-                if (strpos($ziprange, "-")) {
-                    //echo "true".$zip;
+                if (strpos($ziprange, "-")) {                  
                     $rang = explode("-", $ziprange);
                     $r1 = trim($rang[0]);
                     $r2 = trim($rang[1]);
                     for ($i = $r1; $i <= $r2; $i++) {
-                        $vendors[$vand_ar1[0]][] = $i;
+                        $vendors[] = $i;
                     }
                 } else {
-                    $vendors[$vand_ar1[0]][] = trim($ziprange);
+                    $vendors[] = trim($ziprange);
                 }
             }
         }
         $reponse = "";
-        foreach ($vendors as $key => $vend) {
-            if (in_array($pin_code, $vend) || in_array('ALL', $vend)) {
+      //  foreach ($vendors as $key => $vend) {
+            if (in_array($pin_code, $vendors) || in_array('ALL', $vendors)) {
                 $reponse = $pin_code . ",";
             } else {
                 $reponse = "1," . $pin_code;
-            }
+      //      }
         }
         echo " " . rtrim($reponse, ",");
     }
@@ -69,8 +66,8 @@ class Techinflo_Checkavailability_Model_Availability extends Mage_Core_Model_Abs
             $pin_code = $pincode;
             $avilble_vendors = explode("||", $product->getVendorAvailability());
             foreach ($avilble_vendors as $vendarr) {
-                $vand_ar1 = explode(":", $vendarr);
-                $zips = explode(",", $vand_ar1[1]);
+              //  $vand_ar1 = explode(":", $vendarr);
+                $zips = explode(",", $vendarr);
                 foreach ($zips as $ziprange) {
                     if (strpos($ziprange, "-")) {
                         //echo "true".$zip;
@@ -78,22 +75,22 @@ class Techinflo_Checkavailability_Model_Availability extends Mage_Core_Model_Abs
                         $r1 = trim($rang[0]);
                         $r2 = trim($rang[1]);
                         for ($i = $r1; $i <= $r2; $i++) {
-                            $vendors[$vand_ar1[0]][] = $i;
+                            $vendors[] = $i;
                         }
                     } else {
-                        $vendors[$vand_ar1[0]][] = trim($ziprange);
+                        $vendors[] = trim($ziprange);
                     }
                 }
             }
 
             //$reponse="";
-            foreach ($vendors as $key => $vend) {
-                if (in_array($pin_code, $vend) || in_array('ALL', $vend)) {
+           //foreach ($vendors as $key => $vend) {
+                if (in_array($pin_code, $vendors) || in_array('ALL', $vendors)) {
                     $reponse_yes = $pin_code . ",";
                 } else {
                     $reponse_no = $pin_code;
                 }
-            }
+            //}
         }
         if (isset($reponse_no) || !empty($reponse_no)) {
             echo '1,' . $pin_code;
@@ -115,8 +112,8 @@ class Techinflo_Checkavailability_Model_Availability extends Mage_Core_Model_Abs
         }
         $avilble_vendors = explode("||", $product->getVendorAvailability());
         foreach ($avilble_vendors as $vendarr) {
-            $vand_ar1 = explode(":", $vendarr);
-            $zips = explode(",", $vand_ar1[1]);
+          //  $vand_ar1 = explode(":", $vendarr);
+            $zips = explode(",", $vendarr);
             foreach ($zips as $ziprange) {
                 if (strpos($ziprange, "-")) {
                     //echo "true".$zip;
@@ -124,21 +121,21 @@ class Techinflo_Checkavailability_Model_Availability extends Mage_Core_Model_Abs
                     $r1 = trim($rang[0]);
                     $r2 = trim($rang[1]);
                     for ($i = $r1; $i <= $r2; $i++) {
-                        $vendors[$vand_ar1[0]][] = $i;
+                        $vendors[] = $i;
                     }
                 } else {
-                    $vendors[$vand_ar1[0]][] = trim($ziprange);
+                    $vendors[] = trim($ziprange);
                 }
             }
         }
 
         //$reponse="";
-        foreach ($vendors as $key => $vend) {
-            if (in_array($pin_code, $vend) || in_array('ALL', $vend)) {
+        //foreach ($vendors as $key => $vend) {
+            if (in_array($pin_code, $vendors) || in_array('ALL', $vendors)) {
                 return $reponse_yes = "Yes";
             } else {
                 return $reponse_no = "No";
-            }
+            //}
         }
     }
 
