@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Techinflo_Checkavailability>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Techinflo_Checkavailability>
+    </modules>
+</config>

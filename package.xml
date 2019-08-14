@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Techinflo_ProductDeliveryAvailability</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Allows Customer to check product availability in its location by entering zip code of the location</summary>
+    <description>This extension allows Customer to check product availability in its location by entering zip code of the location. If product is not available then extension gives appropriate message and does not allow customer to checkout.</description>
+    <notes>This extension allows Customer to check product availability in its location by entering zip code of the location. If product is not available then extension gives appropriate message and does not allow customer to checkout.</notes>
+    <authors><author><name>Techinflo</name><user>techinflo</user><email>anil.gupta@techinflo.com</email></author></authors>
+    <date>2014-04-15</date>
+    <time>07:00:45</time>
+    <contents><target name="magecommunity"><dir name="Techinflo"><dir name="Checkavailability"><dir name="Block"><file name="Availability.php" hash="6b6b3cab42f2add619c18f03513f8e38"/></dir><dir name="Model"><file name="Availability.php" hash="ceb445218885df846c5cb0582b0baa8d"/><dir name="Resource"><file name="Setup.php" hash="f7fd405e6c33652ff0c261e84630a377"/></dir></dir><dir name="controllers"><file name="IndexController.php" hash="4ed191036782420bad4280738bd1494a"/></dir><dir name="etc"><file name="adminhtml.xml" hash="5c14daf0b4392c26ff65793ff4573ebb"/><file name="config.xml" hash="ba188fa08fc8a689ea2a60a8b6e5afa6"/><file name="system.xml" hash="19d6149c586bb33305c45d787eb7be65"/></dir><dir name="sql"><dir name="techinflo_checkavailability_setup"><file name="mysql4-install-1.2.3.php" hash="dc08e3f2b3ead005c00a3d6b83310c8e"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="techinflo_checkavl.xml" hash="df13a24e42e6bc5b008b23cdea8b2d9e"/></dir><dir name="template"><dir name="techinflo"><dir name="checkavailability"><dir name="checkout"><file name="availability_cart.phtml" hash="19a8bbc44d26b5e7a9ace3b21340cbbb"/><file name="availability_checkout_js.phtml" hash="a7f0d611e005e990266c87d021bfa077"/></dir><file name="availability.phtml" hash="99062a90ee96345dd6e6d8683d5fe8e6"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Techinflo_Checkavailability.xml" hash="7da21c4c4d0b6143e4f0c7a9c7f0d86f"/></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><dir name="techinflo"><dir name="checkavailability"><file name="Thumbs.db" hash="1c890b323f44146c732232ab3217de23"/><file name="ajax-loader.gif" hash="7b9776076d5fceef4993b55c9383dedd"/><file name="techinflo_avl.css" hash="c5a842dfc659aac65d6562a3f4daecfd"/></dir></dir></dir><dir name="js"><dir name="techinflo"><dir name="checkavailability"><file name="common.js" hash="1452f79eb6a0dcd0e688ce19eea7ad3e"/><file name="jquery.min.js" hash="e0c79cc6e409291cc68c5de36bf09c1a"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.1.0</max></php></required></dependencies>
+</package>
